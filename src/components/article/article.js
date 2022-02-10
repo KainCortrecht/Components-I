@@ -87,6 +87,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'This is a lot of fun',
+    date: 'Feb 9, 2022',
+    firstParagraph: `Sometimes there isn't a good answer. No matter how you try to rationalize the outcome, it doesn't make sense. And instead of an answer, you are simply left with a question. Why?`,
+
+    secondParagraph: `Cake or pie? I can tell a lot about you by which one you pick. It may seem silly, but cake people and pie people are really different. I know which one I hope you are, but that's not for me to decide. So, what is it? Cake or pie? `,
+
+    thirdParagraph: `The words hadn't flowed from his fingers for the past few weeks. He never imagined he'd find himself with writer's block, but here he sat with a blank screen in front of him. That blank screen taunting him day after day had started to play with his mind. He didn't understand why he couldn't even type a single word, just one to begin the process and build from there. And yet, he already knew that the eight hours he was prepared to sit in front of his computer today would end with the screen remaining blank.`
   }
 ];
 
@@ -110,12 +119,16 @@ function articleMaker(articleObj) {
   articleWrapper.appendChild(articleParagraphThree);
   articleWrapper.appendChild(expandButton);
 
+  articleDate.textContent = articleObj.date;
+  articleTitle.textContent = articleObj.title;
+  articleParagraphOne.textContent = articleObj.firstParagraph;
+  articleParagraphTwo.textContent = articleObj.secondParagraph;
+  articleParagraphThree.textContent = articleObj.thirdParagraph;
+  expandButton.textContent = '+';
+
   expandButton.addEventListener('click', () => {
     articleWrapper.classList.toggle('article-open');
 
-    articleDate.textContent = articleObj.date;
-    articleTitle.textContent = articleObj.title;
-    articleParagraphOne.textContent = articleObj.firstParagraph;
   })
   return articleWrapper;
 }
